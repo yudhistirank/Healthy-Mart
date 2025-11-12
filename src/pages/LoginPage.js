@@ -64,29 +64,35 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="flex justify-center">
-          <div className="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center">
-            <span className="text-white font-bold text-xl">H</span>
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-8">
+        {/* Header */}
+        <div className="text-center">
+          <div className="flex justify-center">
+            <div className="w-16 h-16 bg-primary-600 rounded-xl flex items-center justify-center">
+              <img
+                src="/LogoHM-W.png"
+                alt="HealthyMart"
+                className="h-12 w-auto"
+              />
+            </div>
           </div>
+          <h2 className="mt-6 text-3xl font-bold text-gray-900">
+            Masuk ke HealthyMart
+          </h2>
+          <p className="mt-2 text-sm text-gray-600">
+            Belum punya akun?{' '}
+            <Link
+              to="/register"
+              className="font-medium text-primary-600 hover:text-primary-500"
+            >
+              Daftar sekarang
+            </Link>
+          </p>
         </div>
-        <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
-          Masuk ke HealthyMart
-        </h2>
-        <p className="mt-2 text-center text-sm text-gray-600">
-          Belum punya akun?{' '}
-          <Link
-            to="/register"
-            className="font-medium text-primary-600 hover:text-primary-500"
-          >
-            Daftar sekarang
-          </Link>
-        </p>
-      </div>
 
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow-card sm:rounded-lg sm:px-10">
+        {/* Login Form */}
+        <div className="bg-white py-8 px-6 shadow-lg rounded-xl border border-gray-100">
           <form className="space-y-6" onSubmit={handleSubmit}>
             {/* User ID Field */}
             <div>
@@ -190,45 +196,6 @@ const LoginPage = () => {
               </button>
             </div>
           </form>
-
-          {/* Divider */}
-          <div className="mt-6">
-            <div className="relative">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-300" />
-              </div>
-              <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-gray-500">Atau</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Demo Accounts */}
-          <div className="mt-6">
-            <p className="text-sm text-gray-600 text-center mb-4">
-              Akun demo untuk testing:
-            </p>
-            <div className="space-y-2">
-              <button
-                type="button"
-                onClick={() => {
-                  setFormData({ userId: 'yudhistira', password: 'yudhistira' });
-                }}
-                className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 border border-gray-200 rounded-lg"
-              >
-                <span className="font-medium">Customer Demo:</span> yudhistira / yudhistira
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setFormData({ userId: 'admin', password: 'admin123' });
-                }}
-                className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 border border-gray-200 rounded-lg"
-              >
-                <span className="font-medium">Admin Demo:</span> admin / admin123
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </div>

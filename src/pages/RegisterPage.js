@@ -131,28 +131,16 @@ const RegisterPage = () => {
     }
   };
 
-  const handleClear = () => {
-    setFormData({
-      username: '',
-      password: '',
-      retypePassword: '',
-      email: '',
-      dob: '',
-      gender: '',
-      address: '',
-      city: '',
-      contactNumber: '',
-      paypalId: ''
-    });
-    setErrors({});
-  };
-
   return (
     <div className="min-h-screen bg-gray-50 py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-2xl">
         <div className="flex justify-center">
-          <div className="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center">
-            <span className="text-white font-bold text-xl">H</span>
+          <div className="w-16 h-16 bg-primary-600 rounded-xl flex items-center justify-center">
+            <img
+                src="/LogoHM-W.png"
+                alt="HealthyMart"
+                className="h-12 w-auto"
+              />
           </div>
         </div>
         <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
@@ -443,26 +431,19 @@ const RegisterPage = () => {
             </div>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-6">
-              <button
-                type="button"
-                onClick={handleClear}
-                className="flex-1 btn-secondary py-3"
-              >
-                Hapus
-              </button>
+            <div className="pt-6">
               <button
                 type="submit"
                 disabled={isLoading || loading}
-                className="flex-1 btn-primary py-3 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full btn-primary py-3 text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isLoading || loading ? (
                   <div className="flex items-center justify-center">
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                    Mendaftar...
+                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
+                    Mendaftar Akun...
                   </div>
                 ) : (
-                  'Daftar'
+                  'Daftar Akun'
                 )}
               </button>
             </div>

@@ -154,8 +154,7 @@ const LandingPage = () => {
             Siap Memulai Perjalanan Sehat Anda?
           </h2>
           <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-            Bergabunglah dengan ribuan pelanggan yang telah merasakan manfaat 
-            продукты berkualitas dari HealthyMart.
+            Bergabunglah dengan ribuan pelanggan yang telah merasakan manfaat produk berkualitas dari HealthyMart.
           </p>
           <Link
             to="/register"
