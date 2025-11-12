@@ -1,10 +1,8 @@
-# HealthyMart - Online Shopping System Frontend
-
-Frontend untuk HealthyMart - Toko Alat Kesehatan Online
+# Healthy Mart - Online Shopping System Frontend
 
 ## 🎯 Overview
 
-HealthyMart adalah sistem e-commerce modern untuk toko alat kesehatan yang dibangun dengan React dan backend API. Frontend ini menyediakan antarmuka pengguna yang bersih, responsif, dan user-friendly untuk pengalaman belanja online yang optimal.
+Healthy Mart adalah sistem e-commerce modern untuk toko alat kesehatan yang dibangun dengan React dan backend API. Frontend ini menyediakan antarmuka pengguna yang bersih, responsif, dan user-friendly untuk pengalaman belanja online yang optimal.
 
 ## ✨ Features
 
@@ -82,44 +80,6 @@ oss-fe/
 - **Heroicons**: SVG icons yang konsisten
 - **jsPDF**: PDF generation untuk receipt
 - **html2canvas**: HTML to canvas untuk PDF generation
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js (v14 atau lebih baru)
-- npm atau yarn
-- Backend API yang sedang berjalan (http://localhost:5000)
-
-### Installation
-
-1. **Clone repository**
-```bash
-git clone <repository-url>
-cd oss-fe
-```
-
-2. **Install dependencies**
-```bash
-npm install
-```
-
-3. **Setup environment variables**
-Buat file `.env` di root directory:
-```env
-REACT_APP_API_BASE_URL=http://localhost:5000
-```
-
-4. **Start development server**
-```bash
-npm start
-```
-
-Aplikasi akan berjalan di `http://localhost:3000`
-
-### Building for Production
-```bash
-npm run build
-```
 
 ## 📋 Available Pages
 
@@ -232,7 +192,7 @@ Tailwind config di `tailwind.config.js` sudah dikustomisasi dengan:
 ## 📝 Environment Variables
 
 ```env
-REACT_APP_API_BASE_URL=http://localhost:5000
+REACT_APP_API_BASE_URL=http://localhost:xxxx
 ```
 
 ## 🤝 Contributing
@@ -250,9 +210,7 @@ MIT License - lihat file LICENSE untuk detail
 ## 📞 Support
 
 Untuk support teknis atau pertanyaan:
-- Email: support@healthymart.com
-- Documentation: [Link to docs]
+- Email: yudhislearning@gmail.com
+- Documentation: [https://github.com/yudhistirank/Healthy-Mart/edit/main/README.md]
 
 ---
-
-**HealthyMart** - Membuat belanja alat kesehatan jadi mudah dan terpercaya! 🏥✨
