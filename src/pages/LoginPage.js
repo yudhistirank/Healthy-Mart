@@ -212,20 +212,20 @@ const LoginPage = () => {
               <button
                 type="button"
                 onClick={() => {
-                  setFormData({ userId: 'customer1', password: 'password123' });
+                  setFormData({ userId: 'yudhistira', password: 'yudhistira' });
                 }}
                 className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 border border-gray-200 rounded-lg"
               >
-                <span className="font-medium">Customer Demo:</span> customer1 / password123
+                <span className="font-medium">Customer Demo:</span> yudhistira / yudhistira
               </button>
               <button
                 type="button"
                 onClick={() => {
-                  setFormData({ userId: 'admin1', password: 'admin123' });
+                  setFormData({ userId: 'admin', password: 'admin123' });
                 }}
                 className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 border border-gray-200 rounded-lg"
               >
-                <span className="font-medium">Admin Demo:</span> admin1 / admin123
+                <span className="font-medium">Admin Demo:</span> admin / admin123
               </button>
             </div>
           </div>
