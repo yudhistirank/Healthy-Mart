@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { 
-  ShoppingCartIcon, 
-  UserCircleIcon, 
+import {
+  ShoppingCartIcon,
+  UserCircleIcon,
   Bars3Icon,
   XMarkIcon,
-  HeartIcon,
   MagnifyingGlassIcon
 } from '@heroicons/react/24/outline';
 
@@ -40,10 +39,12 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
-                <HeartIcon className="w-5 h-5 text-white" />
-              </div>
+            <Link to="/" className="flex items-center space-x-3">
+              <img
+                src="/LogoHM-Blue.png"
+                alt="HealthyMart"
+                className="h-10 w-auto"
+              />
               <span className="text-xl font-bold text-gray-900">HealthyMart</span>
             </Link>
           </div>
@@ -91,7 +92,7 @@ const Navbar = () => {
                       : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
                   }`}
                 >
-                  Buku Tamu
+                  Guestbook
                 </Link>
                 
                 <Link
@@ -218,7 +219,7 @@ const Navbar = () => {
                     className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    Buku Tamu
+                    Guestbook
                   </Link>
                   
                   <Link

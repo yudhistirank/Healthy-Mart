@@ -21,7 +21,6 @@ const RegisterPage = () => {
     email: '',
     dob: '',
     gender: '',
-    role: 'customer',
     address: '',
     city: '',
     contactNumber: '',
@@ -140,7 +139,6 @@ const RegisterPage = () => {
       email: '',
       dob: '',
       gender: '',
-      role: 'customer',
       address: '',
       city: '',
       contactNumber: '',
@@ -341,27 +339,6 @@ const RegisterPage = () => {
                 {errors.gender && (
                   <p className="mt-1 text-sm text-danger-600">{errors.gender}</p>
                 )}
-              </div>
-
-              {/* Role */}
-              <div>
-                <label htmlFor="role" className="block text-sm font-medium text-gray-700">
-                  Peran Akun *
-                </label>
-                <select
-                  id="role"
-                  name="role"
-                  required
-                  value={formData.role}
-                  onChange={handleChange}
-                  className="input-field"
-                >
-                  <option value="customer">Pelanggan - Belanja produk kesehatan</option>
-                  <option value="admin">Administrator - Kelola sistem & produk</option>
-                </select>
-                <p className="mt-1 text-xs text-gray-500">
-                  Pelanggan dapat membeli produk, Administrator dapat mengelola sistem
-                </p>
               </div>
 
               {/* Address */}

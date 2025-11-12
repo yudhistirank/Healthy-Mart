@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { HeartIcon, PhoneIcon, EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import { PhoneIcon, EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline';
 
 const Footer = () => {
   return (
@@ -9,10 +9,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
-                <HeartIcon className="w-5 h-5 text-white" />
-              </div>
+            <div className="flex items-center space-x-3 mb-4">
+              <img
+                src="/LogoHM-W.png"
+                alt="HealthyMart"
+                className="h-10 w-auto"
+              />
               <span className="text-xl font-bold">HealthyMart</span>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
@@ -27,11 +29,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2 text-gray-300">
                 <EnvelopeIcon className="w-4 h-4" />
-                <span>info@healthymart.com</span>
+                <span>yudhislearning@gmail.com</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-300">
                 <MapPinIcon className="w-4 h-4" />
-                <span>Jakarta, Indonesia</span>
+                <span>Surabaya, Indonesia</span>
               </div>
             </div>
           </div>
@@ -51,13 +53,13 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-300 hover:text-white transition-colors">
-                  Tentang Kami
+                <Link to="/guestbook" className="text-gray-300 hover:text-white transition-colors">
+                  Guestbook
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">
-                  Kontak
+                <Link to="/about" className="text-gray-300 hover:text-white transition-colors">
+                  Tentang Kami
                 </Link>
               </li>
               <li>
@@ -68,24 +70,41 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Categories */}
+          {/* Featured Categories */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Kategori Produk</h3>
+            <h3 className="text-lg font-semibold mb-4">Kategori Produk Unggulan</h3>
             <ul className="space-y-2">
               <li>
-                <span className="text-gray-300">Alat Kesehatan</span>
+                <Link
+                  to="/products?category=6729f8001a2b3c4d5e6f7a8b"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Alat Kesehatan Rumah Tangga
+                </Link>
               </li>
               <li>
-                <span className="text-gray-300">Vitamin & Suplemen</span>
+                <Link
+                  to="/products?category=6729f8001a2b3c4d5e6f7a8d"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Alat P3K & Darurat
+                </Link>
               </li>
               <li>
-                <span className="text-gray-300">Alat P3K</span>
+                <Link
+                  to="/products?category=6729f8001a2b3c4d5e6f7a8c"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Obat-Obatan & Suplemen
+                </Link>
               </li>
               <li>
-                <span className="text-gray-300">Kecantikan</span>
-              </li>
-              <li>
-                <span className="text-gray-300">Olahraga</span>
+                <Link
+                  to="/products?category=6729f8001a2b3c4d5e6f7a92"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Alat Monitor Kesehatan
+                </Link>
               </li>
             </ul>
           </div>

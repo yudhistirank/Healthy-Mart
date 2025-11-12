@@ -62,7 +62,7 @@ const GuestbookPage = () => {
             </div>
           </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Buku Tamu HealthyMart
+            Guestbook HealthyMart
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Tinggalkan pesan, saran, atau testimoni Anda untuk membantu kami meningkatkan layanan
@@ -164,7 +164,7 @@ const GuestbookPage = () => {
             {/* About Guestbook */}
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Tentang Buku Tamu
+                Tentang Guestbook
               </h3>
               <div className="space-y-3 text-gray-600">
                 <p>
@@ -172,7 +172,7 @@ const GuestbookPage = () => {
                 </p>
                 <ul className="list-disc list-inside space-y-2 ml-4">
                   <li>Pengalaman belanja di HealthyMart</li>
-                  <li>Saran untuk perbaikan produk dan layanan</li>
+                  <li>Saran untuk perbaikan layanan</li>
                   <li>Testimoni tentang produk kesehatan</li>
                   <li>Pertanyaan atau kesan secara umum</li>
                 </ul>
@@ -205,7 +205,7 @@ const GuestbookPage = () => {
               <div className="space-y-2 text-gray-600 text-sm">
                 <p>• Gunakan bahasa yang sopan dan konstruktif</p>
                 <p>• Hindari konten yang bersifat SARA</p>
-                <p>• Fokus pada pengalaman dan saran yang membangun</p>
+                <p>• Fokus pada saran yang membangun</p>
                 <p>• Pesan akan dibaca oleh tim admin kami</p>
               </div>
             </div>
