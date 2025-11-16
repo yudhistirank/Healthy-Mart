@@ -24,7 +24,6 @@ import AdminGuestbook from './pages/AdminGuestbook';
 import AdminCategories from './pages/AdminCategories';
 import AdminProducts from './pages/AdminProducts';
 import AdminOrders from './pages/AdminOrders';
-import AdminShopRequests from './pages/AdminShopRequests';
 
 // Guestbook Page
 import GuestbookPage from './pages/GuestbookPage';
@@ -212,14 +211,6 @@ function App() {
             element={
               <AdminRoute>
                 <AdminOrders />
-              </AdminRoute>
-            }
-          />
-          <Route
-            path="/admin/shop-requests"
-            element={
-              <AdminRoute>
-                <AdminShopRequests />
               </AdminRoute>
             }
           />

@@ -3,14 +3,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import { productsAPI, categoriesAPI, cartAPI } from '../services/api';
 import { useAuth } from '../contexts/AuthContext';
 import toast from 'react-hot-toast';
-import { 
-  ShoppingCartIcon, 
-  StarIcon, 
-  HeartIcon,
+import {
+  ShoppingCartIcon,
+  StarIcon,
   ArrowRightIcon,
   FireIcon
 } from '@heroicons/react/24/outline';
-import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid';
 
 const HomePage = () => {
   const [categories, setCategories] = useState([]);
@@ -132,7 +130,9 @@ const HomePage = () => {
                 className="group bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-primary-300 transition-all duration-300 text-center"
               >
                 <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-200 transition-colors">
-                  <HeartIcon className="w-6 h-6 text-primary-600" />
+                  <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   {category.name}
@@ -178,9 +178,6 @@ const HomePage = () => {
                     alt={product.name}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <button className="absolute top-3 right-3 p-2 bg-white rounded-full shadow-md hover:bg-gray-50 transition-colors">
-                    <HeartIcon className="w-5 h-5 text-gray-400 hover:text-primary-600" />
-                  </button>
                   <div className="absolute top-3 left-3">
                     <span className="badge-success">Featured</span>
                   </div>

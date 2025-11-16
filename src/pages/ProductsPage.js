@@ -3,10 +3,9 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { productsAPI, categoriesAPI, cartAPI } from '../services/api';
 import { useAuth } from '../contexts/AuthContext';
 import toast from 'react-hot-toast';
-import { 
-  ShoppingCartIcon, 
-  StarIcon, 
-  HeartIcon,
+import {
+  ShoppingCartIcon,
+  StarIcon,
   AdjustmentsHorizontalIcon,
   MagnifyingGlassIcon,
   FunnelIcon
@@ -51,7 +50,7 @@ const ProductsPage = () => {
     try {
       setLoading(true);
       const params = {
-        limit: 12,
+        limit: 100,
         page: 1
       };
       
@@ -62,7 +61,7 @@ const ProductsPage = () => {
       let productsList = response.data.products || [];
       
       // Filter by price range
-      productsList = productsList.filter(product => 
+      productsList = productsList.filter(product =>
         product.price >= priceRange[0] && product.price <= priceRange[1]
       );
       
@@ -120,14 +119,6 @@ const ProductsPage = () => {
     }).format(price);
   };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    const params = new URLSearchParams();
-    if (searchQuery) params.set('q', searchQuery);
-    if (selectedCategory) params.set('category', selectedCategory);
-    setSearchParams(params);
-  };
-
   const clearFilters = () => {
     setSearchQuery('');
     setSelectedCategory('');
@@ -147,36 +138,6 @@ const ProductsPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Search and Filter Header */}
-        <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-          <div className="flex flex-col lg:flex-row gap-4">
-            {/* Search Bar */}
-            <form onSubmit={handleSearch} className="flex-1">
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
-                </div>
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-500"
-                  placeholder="Cari produk kesehatan..."
-                />
-              </div>
-            </form>
-            
-            {/* Filter Toggle Button */}
-            <button
-              onClick={() => setShowFilters(!showFilters)}
-              className="lg:hidden flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50"
-            >
-              <FunnelIcon className="w-5 h-5 mr-2" />
-              Filter
-            </button>
-          </div>
-        </div>
-
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Sidebar - Categories and Filters */}
           <div className={`lg:w-1/4 ${showFilters ? 'block' : 'hidden lg:block'}`}>
@@ -300,9 +261,6 @@ const ProductsPage = () => {
                         alt={product.name}
                         className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      <button className="absolute top-3 right-3 p-2 bg-white rounded-full shadow-md hover:bg-gray-50 transition-colors">
-                        <HeartIcon className="w-5 h-5 text-gray-400 hover:text-primary-600" />
-                      </button>
                       {product.stock <= 5 && (
                         <div className="absolute top-3 left-3">
                           <span className="badge-danger">Stok Terbatas</span>

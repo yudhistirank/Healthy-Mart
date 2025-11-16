@@ -3,9 +3,8 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { productsAPI, cartAPI } from '../services/api';
 import { useAuth } from '../contexts/AuthContext';
 import toast from 'react-hot-toast';
-import { 
+import {
   ShoppingCartIcon,
-  HeartIcon,
   StarIcon,
   TruckIcon,
   ShieldCheckIcon,
@@ -13,7 +12,6 @@ import {
   PlusIcon,
   ArrowLeftIcon
 } from '@heroicons/react/24/outline';
-import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid';
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -21,7 +19,6 @@ const ProductDetailPage = () => {
   const [loading, setLoading] = useState(true);
   const [quantity, setQuantity] = useState(1);
   const [addingToCart, setAddingToCart] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false);
   const { user } = useAuth();
   const navigate = useNavigate();
 
@@ -147,16 +144,6 @@ const ProductDetailPage = () => {
                 <span className="badge badge-primary">
                   {product.category?.name || 'Kategori'}
                 </span>
-                <button
-                  onClick={() => setIsFavorite(!isFavorite)}
-                  className="p-2 rounded-full hover:bg-gray-100 transition-colors"
-                >
-                  {isFavorite ? (
-                    <HeartSolidIcon className="w-6 h-6 text-red-500" />
-                  ) : (
-                    <HeartIcon className="w-6 h-6 text-gray-400" />
-                  )}
-                </button>
               </div>
               
               <h1 className="text-3xl font-bold text-gray-900 mb-4">
@@ -275,10 +262,6 @@ const ProductDetailPage = () => {
                 <li className="flex items-center">
                   <TruckIcon className="w-4 h-4 text-blue-600 mr-2" />
                   Pengiriman cepat dan aman
-                </li>
-                <li className="flex items-center">
-                  <HeartIcon className="w-4 h-4 text-red-600 mr-2" />
-                  Garansi kepuasan pelanggan
                 </li>
               </ul>
             </div>

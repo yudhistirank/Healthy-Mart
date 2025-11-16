@@ -36,41 +36,6 @@ Healthy Mart adalah sistem e-commerce modern untuk toko alat kesehatan yang diba
 - **Touch-Friendly**: Tombol dan interaksi yang optimal untuk mobile
 - **Performance**: Loading states dan skeleton screens untuk UX yang smooth
 
-## 🏗️ Architecture
-
-### Project Structure
-```
-oss-fe/
-├── public/
-│   └── index.html
-├── src/
-│   ├── components/
-│   │   ├── Navbar.js
-│   │   └── Footer.js
-│   ├── contexts/
-│   │   └── AuthContext.js
-│   ├── pages/
-│   │   ├── LandingPage.js
-│   │   ├── LoginPage.js
-│   │   ├── RegisterPage.js
-│   │   ├── HomePage.js
-│   │   ├── ProductsPage.js
-│   │   ├── ProductDetailPage.js
-│   │   ├── CartPage.js
-│   │   ├── CheckoutPage.js
-│   │   ├── PaymentPage.js
-│   │   ├── OrderSuccessPage.js
-│   │   └── ProfilePage.js
-│   ├── services/
-│   │   └── api.js
-│   ├── App.js
-│   ├── index.js
-│   └── index.css
-├── package.json
-├── tailwind.config.js
-└── postcss.config.js
-```
-
 ### Technology Stack
 - **React 18**: Modern React dengan hooks dan functional components
 - **React Router v6**: Client-side routing dengan protected routes
@@ -120,34 +85,11 @@ Gray Scale: #f9fafb to #111827
 - **Forms**: Consistent input styling dengan validation states
 - **Badges**: Status indicators dengan color coding
 
-## 🔧 Configuration
-
-### API Configuration
-Update `src/services/api.js` untuk endpoint backend:
-```javascript
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
-```
-
 ### Tailwind Customization
 Tailwind config di `tailwind.config.js` sudah dikustomisasi dengan:
 - Custom color palette
 - Extended typography
 - Custom shadows dan spacing
-
-## 🧪 Testing
-
-### Manual Testing Flow
-1. **User Registration**: Test form validation dan registration flow
-2. **Login/Logout**: Test authentication dan session management
-3. **Product Browsing**: Test search, filter, dan product navigation
-4. **Shopping Cart**: Test add/remove items, quantity updates
-5. **Checkout Process**: Test complete checkout flow
-6. **Payment**: Test payment simulation
-7. **Profile Management**: Test profile updates
-
-### Demo Accounts
-- **Customer**: customer1 / password123
-- **Admin**: admin1 / admin123
 
 ## 📱 Responsive Breakpoints
 
@@ -161,13 +103,6 @@ Tailwind config di `tailwind.config.js` sudah dikustomisasi dengan:
 - **Token Validation**: JWT token validation dengan auto-logout
 - **Form Validation**: Client-side dan server-side validation
 - **HTTPS Ready**: Struktur untuk production deployment
-
-## 🚀 Performance Optimizations
-
-- **Code Splitting**: React lazy loading untuk pages
-- **Image Optimization**: Responsive images dengan lazy loading
-- **Bundle Optimization**: Tree shaking untuk minimal bundle size
-- **Caching**: Browser caching untuk static assets
 
 ## 📊 Browser Support
 
@@ -188,12 +123,6 @@ Tailwind config di `tailwind.config.js` sudah dikustomisasi dengan:
 - ESLint configuration
 - Prettier integration
 - Conventional commits
-
-## 📝 Environment Variables
-
-```env
-REACT_APP_API_BASE_URL=http://localhost:xxxx
-```
 
 ## 🤝 Contributing
 

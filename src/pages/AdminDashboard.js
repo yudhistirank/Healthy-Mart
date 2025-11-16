@@ -7,7 +7,7 @@ import {
   BookOpenIcon,
   TagIcon,
   ShoppingCartIcon,
-  DocumentTextIcon,
+  CurrencyDollarIcon,
   CubeIcon
 } from '@heroicons/react/24/outline';
 
@@ -19,21 +19,25 @@ const AdminDashboard = () => {
     categories: 0,
     products: 0,
     orders: 0,
-    shopRequests: 0
+    totalRevenue: 0
   });
   const [loadingStats, setLoadingStats] = useState(true);
 
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const [customersRes, guestbookRes, categoriesRes, productsRes, ordersRes, shopRequestsRes] = await Promise.all([
+        const [customersRes, guestbookRes, categoriesRes, productsRes, ordersRes] = await Promise.all([
           adminAPI.getCustomers(),
           adminAPI.getGuestbookEntries(),
           adminAPI.getCategories(),
           adminAPI.getProducts(),
-          adminAPI.getOrders(),
-          adminAPI.getShopRequests()
+          adminAPI.getOrders()
         ]);
+
+        // Calculate total revenue from completed orders
+        const totalRevenue = ordersRes.data
+          .filter(order => order.status === 'completed')
+          .reduce((sum, order) => sum + (order.total || 0), 0);
 
         setStats({
           customers: customersRes.data.length,
@@ -41,7 +45,7 @@ const AdminDashboard = () => {
           categories: categoriesRes.data.length,
           products: productsRes.data.length,
           orders: ordersRes.data.length,
-          shopRequests: shopRequestsRes.data.length
+          totalRevenue: totalRevenue
         });
       } catch (error) {
         console.error('Failed to fetch stats:', error);
@@ -109,12 +113,12 @@ const AdminDashboard = () => {
       bgColor: 'bg-blue-50'
     },
     {
-      title: 'Shop Requests',
-      value: stats.shopRequests,
-      icon: DocumentTextIcon,
-      color: 'bg-blue-500',
-      textColor: 'text-blue-600',
-      bgColor: 'bg-blue-50'
+      title: 'Total Revenue',
+      value: `Rp ${stats.totalRevenue.toLocaleString('id-ID')}`,
+      icon: CurrencyDollarIcon,
+      color: 'bg-green-500',
+      textColor: 'text-green-600',
+      bgColor: 'bg-green-50'
     }
   ];
 
@@ -207,13 +211,13 @@ const AdminDashboard = () => {
               </a>
               
               <a
-                href="/admin/shop-requests"
+                href="/admin/orders"
                 className="flex items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
               >
-                <DocumentTextIcon className="h-8 w-8 text-red-600 mr-3" />
+                <CurrencyDollarIcon className="h-8 w-8 text-green-600 mr-3" />
                 <div>
-                  <h3 className="font-medium text-gray-900">Shop Requests</h3>
-                  <p className="text-sm text-gray-600">Approve/reject shop requests</p>
+                  <h3 className="font-medium text-gray-900">Revenue Analytics</h3>
+                  <p className="text-sm text-gray-600">View detailed revenue reports</p>
                 </div>
               </a>
             </div>

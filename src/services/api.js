@@ -106,11 +106,6 @@ export const adminAPI = {
   getOrders: () => apiClient.get('/admin/orders'),
   updateOrderShipping: (id, status) => apiClient.put(`/admin/orders/${id}/shipping`, { status }),
   
-  // Shop Request Management
-  getShopRequests: () => apiClient.get('/admin/shop-requests'),
-  approveShopRequest: (id) => apiClient.put(`/admin/shop-requests/${id}/approve`),
-  rejectShopRequest: (id) => apiClient.put(`/admin/shop-requests/${id}/reject`),
-  createShopRequest: (requestData) => apiClient.post('/admin/shop-requests', requestData),
 };
 
 // Guestbook API (Public)
